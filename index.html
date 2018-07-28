@@ -152,7 +152,8 @@ border: solid 1px black;
   grid-gap:20px;
   grid-template-areas: 
   'aboutus aboutus b' 
-  'aboutus aboutus b';
+  'aboutus aboutus b'
+  'slide slide slide';
   
   }
 
@@ -236,16 +237,73 @@ border: solid 1px black;
   margin-bottom: 100;
   color: var(--light); 
 }
-.boxes{
+
+@keyframes boxes{
+  0%{
+    left: 0;
+  }
+  10%{
+    left: 0;
+  }
+  20% {
+    left:-100%;
+  }
+  30%{
+    left:-100%;
+  }
+  40%{
+    left:-200%;
+  }
+  50%{
+    left:-200%;
+
+  }
+  60%{
+    left:-300%;
+  }
+  70%{
+    left:-300%;
+  }
+  80%{
+    left:-400%;
+  }
+  90%{
+    left: -400%;
+
+  }
+  100%{
+    left: 0;
+
+  }
+}
+#boxes{
+  overflow:hidden; 
   display: grid;
   grid-gap: 20px;
-  grid-template-areas: 
-  'a a'
-  ;
+  grid-area: slide;
+}
+#boxes figure img {
+  width: 20%;
+  float: left;
+}
+#boxes figure {
+  position: relative;
+  width: 500%;
+  margin: 0;
+  left: 0;
+  text-align: left;
+  font-size: 0;
+  animation: 20s boxes infinite;
+}
+#boxes img{
+  width: 100%;
+min-height: 600px;
+max-height:600px; 
+
 }
 .boxa {
-	font-size: .8rem;
-	height: 500px; 
+  font-size: .8rem;
+  height: 500px; 
   grid-area: a;
   background-size: cover;
   color: var(--Black);
@@ -256,7 +314,7 @@ border: solid 1px black;
   background-image: url("https://qph.fs.quoracdn.net/main-qimg-6cfb64e97c86ad7256732eea61c7b939-c");
 }
 .boxa h5{
-	text-decoration: underline;
+  text-decoration: underline;
   font-size: 2rem;
   grid-area: h;
   position: relative;
@@ -330,22 +388,13 @@ footer {
     background-size: contain;
     background-repeat: repeat-y repeat-x;
     }
-@media (max-width: 1024px){
-  .boxes {
-    grid-template-areas: 
-    'a'
-    'topbox';
-    margin-right: 45px;
-    margin-left: 45px;
-
-
-}
 
 @media (max-width: 1024px) {
   .mainbody {
     grid-template-areas:
       'aboutus aboutus'
-      'b b';
+      'b b'
+      'slide slide';
       margin-right: 45px;
       margin-left:45px;
     }
@@ -355,6 +404,7 @@ footer {
 }
  body {
   background: #3463af;
+
 }
 
    .main-nav{
@@ -365,7 +415,7 @@ footer {
     padding-top: none;
   }
 .boxb {
-	min-height: 450px;
+  min-height: 450px;
   min-width: 600px;
  max-width: none;
 }
@@ -382,7 +432,7 @@ footer {
     margin-right: 45px;
   }
   footer {
-  	margin-right: 45px; 
+    margin-right: 45px; 
     margin-left:45px; 
   }
 
@@ -391,7 +441,8 @@ footer {
     grid-template-areas:
       'aboutus'
       'b'
-      'b';
+      'b'
+      'slide';
   }
  .boxa img {
   position: relative;
@@ -453,12 +504,17 @@ footer {
       <h6></h6>
       <p> <p>
     </div>
-    </section>
-    <section class='boxes'>
-    <div class="boxa">
-      <p style="top:70px; left:60px; position: relative;">WE CAN HANDLE THOSE SCRATCHES!<p>
-<iframe width="760" height="415" src="https://www.youtube.com/embed/15hjrWQxtwU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="position: relative; left: 230px; top:-130px;"></iframe>
-    </section>
+    <div id="boxes">
+      <figure>
+       <img src="https://pbs.twimg.com/media/CZVximMU8AER9DQ.jpg">
+       <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/2010_Ford_Mustang_Close-up_View_of_Dashboard.JPG">
+       <img src="https://scontent-lga3-1.xx.fbcdn.net/v/t1.0-9/37318030_660225820990356_5285111069096804352_n.jpg?_nc_cat=0&oh=29e0b9c0cb2a92f0c62e5b1815098379&oe=5C12AC65">
+       <img src="http://www.aceintheholetowing.com/uploads/8/7/8/4/87845272/bigstock-chevy-corvette-94981421_orig.jpg">
+       <img src="http://www.mustangdreams.com/interior2-W-White%20027.jpg">
+     
+      </figure>
+     </div>
+</section>
    
 <body/>
  <footer>
